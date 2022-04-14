@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .menu {
+            width: 100%;
+            max-width: 1000px;
+            height: 60px;
+            background-color: ;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .menu h3 {
+            margin-right: 20vw;
+        }
+        
+        .menu ul {}
+        
+        .menu ul li {
+            display: inline-block;
+            list-style: none;
+        }
+        
+        @media only screen and (max-width: 800px) {
+            .menu {
+                width: 100%;
+                max-width: 1000px;
+                height: 60px;
+                background-color: ;
+                margin: auto;
+                display: block;
+            }
+            .menu h3 {
+                margin-right: 30px;
+                float: right;
+            }
+            .menu span {
+                width: 60px;
+                height: 60px;
+                background-color: ;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .menu span::before {
+                content: '';
+                position: absolute;
+                width: 35px;
+                height: 2px;
+                background-color: black;
+                transform: translateY(10px);
+            }
+            .menu span::after {
+                content: '';
+                width: 35px;
+                height: 2px;
+                background-color: black;
+                transform: translateY(-10px);
+                box-shadow: 0px 10px 0px 0px black;
+            }
+            .menu {}
+            .menu ul li {
+                display: block;
+                list-style: none;
+            }
+        }
+    </style>
+    <title>Criando menu</title>
+</head>
+
+<body class="conteudo">
+
+    <script>
+        const body = document.querySelector('body')
+
+        const div = document.createElement('div')
+        div.classList.add('menu')
+
+        const inicio = document.createElement('ul')
+        const contato = document.createElement('ul')
+        const carrinho = document.createElement('ul')
+        const produtos = document.createElement('ul')
+        const sobre = document.createElement('ul')
+
+        inicio.innerHTML = "<li>Inicio</ul>"
+        contato.innerHTML = "<li>Contato</ul>"
+        carrinho.innerHTML = "<li>Carrinho</ul>"
+        produtos.innerHTML = "<li>Produtos</ul>"
+        sobre.innerHTML = "<li>Sobre</ul>"
+
+        div.insertBefore(inicio, div.childNodes[0])
+        div.insertBefore(contato, div.childNodes[1])
+        div.insertBefore(carrinho, div.childNodes[2])
+        div.insertBefore(produtos, div.childNodes[3])
+        div.insertBefore(sobre, div.childNodes[4])
+
+        const logoTipo = document.createElement('h3')
+        logoTipo.innerHTML = "MenuPuro"
+
+        const icone = document.createElement('span')
+        div.insertBefore(icone, div.childNodes[0])
+
+        div.insertBefore(logoTipo, div.childNodes[0])
+
+
+        body.appendChild(div)
+    </script>
+
+</body>
+
+</html>
